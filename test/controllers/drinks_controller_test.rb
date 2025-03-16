@@ -23,4 +23,13 @@ class DrinksControllerTest < ActionDispatch::IntegrationTest
     data = JSON.parse(response.body)
     assert_equal [ "id", "name", "color", "created_at", "updated_at" ], data.keys
   end
+
+  test "update" do
+    drink = Drink.first
+    patch "/drinks/#{drink.id}.json", params: { name: "Updated name" }
+    assert_response 200
+
+    data = JSON.parse(response.body)
+    assert_equal "Updated name", data["name"]
+  end
 end

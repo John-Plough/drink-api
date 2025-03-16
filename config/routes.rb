@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get "/drinks" => "drinks#index"
   post "/drinks" => "drinks#create"
   get "/drinks/:id" => "drinks#show"
+  patch "/drinks/:id" => "drinks#update"
 end
