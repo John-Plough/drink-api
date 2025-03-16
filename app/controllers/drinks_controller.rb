@@ -25,4 +25,10 @@ class DrinksController < ApplicationController
     )
     render :show
   end
+
+  def destroy
+    @drink = Drink.find_by(id: params[:id])
+    @drink.destroy
+    render json: { message: "I destroyed that drink record" }
+  end
 end

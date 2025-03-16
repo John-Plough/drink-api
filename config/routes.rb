@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   post "/drinks" => "drinks#create"
   get "/drinks/:id" => "drinks#show"
   patch "/drinks/:id" => "drinks#update"
+  delete "/drinks/:id" => "drinks#destroy"
 end
